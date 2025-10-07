@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB connection
-const MONGODB_URI = process.env.MONGO_URI;
+const MONGODB_URI = 'mongodb+srv://AMJAMAITHILI:maithili@student-cluster.lqk2je1.mongodb.net/student-details?retryWrites=true&w=majority&appName=student-cluster';
 mongoose.connect(MONGODB_URI, { 
   useNewUrlParser: true, 
   useUnifiedTopology: true 
@@ -24,8 +24,6 @@ const studentSchema = new mongoose.Schema({
   name: { type: String, required: true },
   rollNo: { type: String, required: true },
   gender: { type: String, enum: ['Male','Female'], required: true },
-  department: { type: String, enum: ['IT','CSE','AIDS','CET'], required: true },
-  section: { type: Number, enum: [1,2,3], required: true },
   skills: [{ type: String }],
   createdAt: { type: Date, default: Date.now }
 });

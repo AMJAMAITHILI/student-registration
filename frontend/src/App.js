@@ -6,14 +6,12 @@ function App() {
   const [form, setForm] = useState({
     name: '', 
     rollNo: '', 
-    gender: '', 
-    department: '', 
-    section: '', 
+    gender: '',
     skills: []
   });
   const [message, setMessage] = useState(null);
   
-  const API = process.env.REACT_APP_API_URL || 'http://localhost:4000';
+  const API = process.env.REACT_APP_API_URL || 'http://localhost:4000';;
 
   // Handlers for inputs
   const handleChange = (e) => {
@@ -52,8 +50,6 @@ function App() {
         name:'', 
         rollNo:'', 
         gender:'', 
-        department:'', 
-        section:'', 
         skills:[] 
       });
       
@@ -112,33 +108,7 @@ function App() {
             Female
           </label>
         </div>
-        
-        <label>Department</label>
-        <select 
-          name="department" 
-          value={form.department} 
-          onChange={handleChange} 
-          required
-        >
-          <option value="">--Select--</option>
-          <option>IT</option>
-          <option>CSE</option>
-          <option>AIDS</option>
-          <option>CET</option>
-        </select>
-        
-        <label>Section</label>
-        <select 
-          name="section" 
-          value={form.section} 
-          onChange={handleChange} 
-          required
-        >
-          <option value="">--Select--</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
+
         
         <label>Skills</label>
         <div className="checkbox-group">
